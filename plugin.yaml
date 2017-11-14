@@ -1,5 +1,5 @@
 name: "github-install"
-version: "0.1.1"
+version: "0.1.0"
 usage: "Install helm charts from github repos"
 description: |-
   This plugin installs raw Helm charts from Github.
