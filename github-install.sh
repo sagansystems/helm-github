@@ -130,4 +130,5 @@ git checkout $BRANCH
 cd -
 
 # Install it!
+# Take out the first variable in passthru (install) so that helm install works
 helm install $REPO_LOCATION/$CHARTPATH "${PASSTHRU[@]:1}"
