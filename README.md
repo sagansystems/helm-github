@@ -3,7 +3,7 @@ This is a helm plugin that installs raw helm charts from github.
 
 # Installation
   * `cd $HELM_HOME/plugins/`
-  * `git clone https://github.com/sagansystems/helm-github.git`
+  * `git clone -b master https://github.com/sagansystems/helm-github.git`
   * `helm github-install --help`
 
 # Updates
