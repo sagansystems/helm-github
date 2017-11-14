@@ -1,4 +1,4 @@
-name: "github-install"
+name: "github"
 version: "0.1.0"
 usage: "Install helm charts from github repos"
 description: |-

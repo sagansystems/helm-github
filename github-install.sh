@@ -7,10 +7,10 @@ Install Helm charts from Github
 This is a helm plugin that installs raw helm charts from github.
 
 Example Usage:
-    helm github-install --repo git@github.com:coreos/alb-ingress-controller.git --ref master --path alb-ingress-controll-helm
+    helm github install --repo git@github.com:coreos/alb-ingress-controller.git --ref master --path alb-ingress-controller-helm
 
 Available Commands:
-    helm github-install    Install a Helm chart from Github
+    helm github install    Install a Helm chart from Github
 
 Available Flags:
     --repo, -r          (Required) Specify the repo to install
@@ -130,4 +130,4 @@ git checkout $BRANCH
 cd -
 
 # Install it!
-helm install $REPO_LOCATION/$CHARTPATH "${PASSTHRU[@]}"
+helm install $REPO_LOCATION/$CHARTPATH "${PASSTHRU[@]:1}"
