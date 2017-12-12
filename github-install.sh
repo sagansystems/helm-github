@@ -115,7 +115,7 @@ if [ "$DEBUG" == "TRUE" ]; then
 fi
 
 # Checkout the repo & enter it
-if [ -d "${$REPO_LOCATION}" ]; then
+if [ -d "${REPO_LOCATION}" ]; then
     cd $REPO_LOCATION
     git checkout master;
     git pull; 
