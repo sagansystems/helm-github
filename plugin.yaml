@@ -1,6 +1,6 @@
 name: "github"
 version: "0.1.1"
-usage: "Install helm charts from github repos"
+usage: "Install or upgrade Helm charts from GitHub repos"
 description: |-
-  This plugin installs raw Helm charts from Github.
-command: "$HELM_PLUGIN_DIR/github-install.sh"
+  This plugin installs or upgrades raw Helm charts from Github
+command: "$HELM_PLUGIN_DIR/github.sh"
