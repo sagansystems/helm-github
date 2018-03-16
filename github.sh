@@ -3,13 +3,13 @@ set -e
 
 usage() {
 cat << EOF
-Install or upgrade Helm charts from Github
+Install or upgrade Helm charts from GitHub
 https://docs.helm.sh/helm/#helm-install
 https://docs.helm.sh/helm/#helm-upgrade
 
 Available Commands:
-    helm github install             Install a Helm chart from Github
-    helm github upgrade <release>   Upgrades the release to a new version of the Helm chart from Github
+    helm github install             Install a Helm chart from GitHub
+    helm github upgrade <release>   Upgrades the release to a new version of the Helm chart from GitHub
 
 Available Flags:
     --repo, -r          (Required) Specify the repo to install

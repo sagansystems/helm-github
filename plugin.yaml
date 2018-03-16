@@ -2,5 +2,5 @@ name: "github"
 version: "0.2.0"
 usage: "Install or upgrade Helm charts from GitHub repos"
 description: |-
-  This plugin installs or upgrades raw Helm charts from Github
+  This plugin installs or upgrades raw Helm charts from GitHub repos
 command: "$HELM_PLUGIN_DIR/github.sh"
