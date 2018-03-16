@@ -76,7 +76,7 @@ if [ "$HELP" == "TRUE" ]; then
     exit 0
 fi
 
-#  Update this plugin
+#  Update this Helm plugin
 if [ "$UPDATE" == "TRUE" ]; then  
     cd "$HELM_HOME/plugins/helm-github"
     git pull
