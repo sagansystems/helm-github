@@ -1,1 +1,4 @@
 repos
+.idea
+helm-github.iml
+

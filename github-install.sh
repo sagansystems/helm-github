@@ -70,7 +70,7 @@ set -- "${PASSTHRU[@]}"
 # Show help if flagged
 if [ "$HELP" == "TRUE" ]; then
   usage
-  exit 1
+  exit 0
 fi
 
 #  Update plugin
@@ -80,7 +80,7 @@ if [ "$UPDATE" == "TRUE" ]; then
   PLUGIN_VERSION=$(git log --pretty=format:'%h' -n 1)
   cd -
   echo "Success! Updated this plugin to: $PLUGIN_VERSION"
-  exit 1
+  exit 0
 fi
 
 if [ -z "$REPO" ]; then
