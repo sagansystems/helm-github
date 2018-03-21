@@ -10,6 +10,7 @@ https://docs.helm.sh/helm/#helm-upgrade
 Available Commands:
     helm github install             Install a Helm chart from Github
     helm github upgrade <release>   Upgrades the release to a new version of the Helm chart from Github
+    helm github fetch               Fetch Helm chart from Github (e.g git clone)
 
 Available Flags:
     --repo, -r          (Required) Specify the repo to install
@@ -146,6 +147,9 @@ elif [ "$COMMAND" == "upgrade" ]; then
     echo "Upgrading ${RELEASE} release to a new version of the chart from the GitHub repo"
     # Take out the first two variables in passthru (install <release>) so that helm upgrade works
     helm upgrade "${PASSTHRU[@]:2}" $RELEASE $REPO_LOCATION/$CHARTPATH
+    exit 0
+elif [ "$COMMAND" == "fetch" ]; then 
+    echo "GitHub repo has been fetched to ${REPO_LOCATION}"    
     exit 0
 else
     echo "Error: Invalid command, must be one of 'install' or 'upgrade'"
