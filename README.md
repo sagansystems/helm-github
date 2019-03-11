@@ -36,3 +36,24 @@ A Helm plugin that installs or upgrades raw Helm charts from GitHub
   * `helm github upgrade happy-panda --repo git@github.com:kubernetes/charts.git --path stable/external-dns`
   * `helm github upgrade happy-panda --repo git@github.com:coreos/alb-ingress-controller.git --ref 6d64984 --path alb-ingress-controller-helm`
   * `helm github upgrade happy-panda --repo git@github.com:coreos/alb-ingress-controller.git --ref master --path alb-ingress-controller-helm -f alb-ingress-controller/values.yml --version 0.0.6`
+
+### Windows Support
+
+This plugin is written as a Bash script, and therefore not designed to run under Microsoft Windows.
+[Git for Windows](https://gitforwindows.org/), however, bundles the so-called `Git Bash`. This
+alternative shell comes bundled with many unix commands and a bash implementation.
+
+In order to use this plugin with the `Git Bash` (**not** `cmd.exe` or `PowerShell`!), please modify
+the `plugin.yml` file, and replace the line
+
+```yaml
+command: "$HELM_PLUGIN_DIR/github.sh"
+```
+
+with
+
+```yaml
+command: "bash $HELM_PLUGIN_DIR/github.sh"
+```
+
+You can do this either on your own fork of this plugin, or the installed version in `~/.helm/plugins`.
