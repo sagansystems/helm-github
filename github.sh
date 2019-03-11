@@ -120,16 +120,26 @@ fi
 
 # Checkout the repo & enter it
 if [ -d "${REPO_LOCATION}" ]; then
-    cd $REPO_LOCATION
-    git checkout master;
-    git pull;
+    # Repo already exists
+    cd "$REPO_LOCATION"
+    # Cleanup current working tree including untracked files
+    git reset --hard HEAD
+    git clean -dx --force
+    # Detach in case we're on a local branch
+    git checkout --detach
+    # Delete all local branches to not have to merge them all
+    for branch in $(git for-each-ref --format="%(refname:strip=2)" refs/heads); do
+        git branch -D $branch
+    done
+    # Update from remote
+    git fetch --force --all --tags --prune --prune-tags
 else
-    git clone $REPO $REPO_LOCATION;
-    cd $REPO_LOCATION;
+    git clone "$REPO" "$REPO_LOCATION";
+    cd "$REPO_LOCATION";
 fi
 
 # Checkout the correct branch 
-git checkout $BRANCH
+git checkout "$BRANCH"
 
 # Exit the repo
 cd -
