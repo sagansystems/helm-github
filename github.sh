@@ -1,6 +1,8 @@
 #!/bin/bash
 set -e
 
+: ${HELM_HOME:=$HOME/.helm}
+
 usage() {
 cat << EOF
 Install or upgrade Helm charts from Github
